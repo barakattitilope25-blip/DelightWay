@@ -1,0 +1,134 @@
+.hero {
+  height: 785px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(16, 32, 48, 0.5); /* Semi-transparent #102030 overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+  padding-right: 60px;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-family: 'Salsa', cursive;
+  font-size: 70px;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-family: 'Sahitya', serif;
+  font-size: 23px;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  text-align: center; /* Aligned sub-headline to the middle */
+}
+
+/* Hero Section Responsive */
+@media (max-width: 1200px) {
+  .hero {
+    height: 600px;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    height: 500px;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 450px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 400px;
+  }
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+  .hero-content {
+    padding: 1rem;
+  }
+}
+
+.hero-btns {
+  display: flex;
+  gap: 3rem; /* Increased spacing between buttons */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero-btn {
+  background-color: #F9C62C;
+  color: #102030;
+  border: 2px solid #F9C62C;
+  padding: 0.5rem 1.2rem; /* Further reduced from 0.7rem 1.5rem */
+  font-family: 'Sahitya', serif;
+  font-size: 24px;
+  font-weight: 400; /* Regular weight */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px; /* Further reduced from 160px */
+}
+
+.hero-btn:hover {
+  background-color: #e5b528;
+  border-color: #e5b528;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(249, 198, 44, 0.3);
+}
+
+.hero-btn.secondary {
+  background-color: transparent;
+  color: #F9C62C;
+}
+
+.hero-btn.secondary:hover {
+  background-color: #F9C62C;
+  color: #102030;
+}

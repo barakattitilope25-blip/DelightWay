@@ -1,0 +1,740 @@
+/* ═══════════════════════════════════════
+   ABOUT PAGE  –  matches About Page Structure.png
+═══════════════════════════════════════ */
+
+.ap {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+/* ── shared utilities ── */
+.ap-eyebrow {
+  display: block;
+  font-family: 'Salsa', cursive;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F9C62C;
+  margin-bottom: 8px;
+}
+.ap-eyebrow.center { text-align: center; }
+
+.ap-center-heading {
+  font-family: 'Salsa', cursive;
+  font-size: 34px;
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 0 40px;
+  line-height: 1.2;
+}
+
+.ap-section {
+  padding: 72px 0;
+}
+
+/* ════════════════════════════════
+   1. HERO  –  cinematic full-width
+════════════════════════════════ */
+.ap-hero {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* full-bleed dark navy gradient overlay */
+.ap-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 12, 24, 0.88) 0%,
+    rgba(4, 12, 24, 0.72) 35%,
+    rgba(4, 12, 24, 0.35) 60%,
+    rgba(4, 12, 24, 0.15) 100%
+  );
+  z-index: 1;
+}
+
+/* cinematic edge vignette — fades all 4 edges into the background */
+.ap-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    /* top edge */
+    linear-gradient(to bottom,  rgba(4,12,24,0.55) 0%, transparent 18%),
+    /* bottom edge */
+    linear-gradient(to top,     rgba(4,12,24,0.75) 0%, transparent 22%),
+    /* right edge */
+    linear-gradient(to left,    rgba(4,12,24,0.60) 0%, transparent 20%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* content sits above overlay */
+.ap-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* glassmorphism card — only behind the text */
+.ap-hero-glass {
+  width: 520px;
+  max-width: 100%;
+  background: rgba(7, 25, 45, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 24px;
+  padding: 48px 44px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  text-align: left;
+}
+
+.ap-hero-glass h1 {
+  font-family: 'Salsa', cursive;
+  font-size: 56px;
+  line-height: 66px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+}
+
+.ap-hero-tagline {
+  font-family: 'Sahitya', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #F4C542;
+  margin: 18px 0 0;
+}
+
+.ap-hero-desc {
+  font-family: 'Sahitya', serif;
+  font-size: 23px;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 24px 0 0;
+}
+
+@media (max-width: 768px) {
+  .ap-hero { min-height: 480px; }
+  .ap-hero-content { padding: 0 20px; }
+  .ap-hero-glass {
+    width: 100%;
+    padding: 32px 24px;
+  }
+  .ap-hero-glass h1 { font-size: 48px; line-height: 56px; }
+  .ap-hero-tagline { font-size: 20px; }
+  .ap-hero-desc { font-size: 18px; line-height: 32px; }
+}
+
+@media (max-width: 480px) {
+  .ap-hero { min-height: 420px; }
+  .ap-hero-glass h1 { font-size: 36px; line-height: 44px; }
+}
+
+/* ════════════════════════════════
+   2. WHO WE ARE
+════════════════════════════════ */
+.ap-who {
+  background-color: var(--bg-color);
+  padding-top: 0;
+}
+
+.ap-who.ap-section {
+  padding: 80px 0;
+}
+
+.ap-who-inner {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  flex-wrap: nowrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px 0 20px;
+  box-sizing: border-box;
+}
+
+.ap-who-text {
+  flex: 0 0 40%;
+  text-align: left;
+}
+
+.ap-who-text h2 {
+  font-family: 'Salsa', cursive;
+  font-size: 52px;
+  line-height: 64px;
+  color: #ffffff;
+  margin: 0 0 24px;
+  max-width: 500px;
+}
+
+.ap-who-text p {
+  font-family: 'Sahitya', serif;
+  font-size: 20px;
+  line-height: 34px;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 520px;
+  margin: 0 0 36px;
+}
+
+.ap-outline-btn {
+  display: inline-block;
+  border: 1px solid #F9C62C;
+  color: #F9C62C;
+  font-family: 'Sahitya', serif;
+  font-size: 16px;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
+.ap-outline-btn:hover {
+  background: #F9C62C;
+  color: #102030;
+}
+
+.ap-who-img {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 480px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+}
+.ap-who-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .ap-who-inner { gap: 32px; }
+  .ap-who-text h2 { font-size: 40px; line-height: 50px; }
+  .ap-who-img { height: 380px; }
+}
+
+@media (max-width: 768px) {
+  .ap-who-inner { flex-wrap: wrap; }
+  .ap-who-text { flex: 0 0 100%; }
+  .ap-who-text h2 { font-size: 32px; line-height: 42px; }
+  .ap-who-text p { font-size: 17px; }
+  .ap-who-img { flex: 0 0 100%; height: 280px; border-radius: 16px; }
+}
+
+/* ════════════════════════════════
+   3. MISSION & VISION
+════════════════════════════════ */
+.ap-mv-section {
+  background-color: #0d1e2e;
+  padding: 60px 0 30px;
+}
+
+.ap-mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.ap-mv-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(249,198,44,0.15);
+  border-radius: 14px;
+  padding: 36px 32px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.ap-mv-icon-wrap {
+  flex-shrink: 0;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(249,198,44,0.1);
+  border: 1px solid rgba(249,198,44,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.ap-mv-card h3 {
+  font-family: 'Salsa', cursive;
+  font-size: 24px;
+  color: #F9C62C;
+  margin: 0 0 14px;
+}
+
+.ap-mv-card p {
+  font-family: 'Sahitya', serif;
+  font-size: 17px;
+  line-height: 1.85;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ════════════════════════════════
+   4. TEAM
+════════════════════════════════ */
+.ap-team-section {
+  background-color: var(--bg-color);
+  padding-top: 20px;
+}
+
+.ap-team-section .page-container {
+  max-width: 1280px;
+  padding: 0 20px;
+}
+
+.ap-team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.ap-team-card {
+  text-align: center;
+}
+
+.ap-team-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.ap-team-photo img {
+  width: 100%;
+  height: 135%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transform: translateY(0%);
+  transition: transform 0.4s ease;
+}
+
+.ap-team-card:hover .ap-team-photo img {
+  transform: translateY(-2%);
+}
+
+/* gradient + text overlay at bottom of each card */
+.ap-team-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 14px 16px;
+  background: linear-gradient(
+    to top,
+    rgba(4, 12, 24, 0.92) 0%,
+    rgba(4, 12, 24, 0.60) 50%,
+    transparent 100%
+  );
+  text-align: left;
+}
+
+.ap-team-overlay h4 {
+  font-family: 'Salsa', cursive;
+  font-size: 15px;
+  color: #ffffff;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.ap-team-overlay span {
+  font-family: 'Sahitya', serif;
+  font-size: 13px;
+  color: #F9C62C;
+  line-height: 1.2;
+}
+
+/* ════════════════════════════════
+   5. STATS
+════════════════════════════════ */
+.ap-stats-section {
+  background-color: #0d1e2e;
+  border-top: 1px solid rgba(249,198,44,0.1);
+  border-bottom: 1px solid rgba(249,198,44,0.1);
+  padding: 44px 0;
+}
+
+.ap-stats-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.ap-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.ap-stat-icon { font-size: 26px; }
+
+.ap-stat-value {
+  font-family: 'Salsa', cursive;
+  font-size: 38px;
+  color: #F9C62C;
+  line-height: 1;
+}
+
+.ap-stat-label {
+  font-family: 'Sahitya', serif;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* ════════════════════════════════
+   6. PARTNERS
+════════════════════════════════ */
+.ap-partners-section {
+  background-color: var(--bg-color);
+}
+
+.ap-partners-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ap-partner-tile {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 12px 18px;
+  width: 130px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ap-partner-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(249,198,44,0.2);
+}
+.ap-partner-tile img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ════════════════════════════════
+   7. CTA BANNER
+════════════════════════════════ */
+.ap-cta-banner {
+  background-color: #0d1e2e;
+  border-top: 1px solid rgba(249,198,44,0.15);
+  padding: 20px 0;
+}
+
+.ap-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.ap-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ap-cta-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.ap-cta-copy h3 {
+  font-family: 'Sahitya', serif;
+  font-size: 19px;
+  color: #ffffff;
+  margin: 0 0 4px;
+  text-align: left;
+}
+
+.ap-cta-copy p {
+  font-family: 'Sahitya', serif;
+  font-size: 13px;
+  opacity: 0.65;
+  margin: 0;
+  text-align: left;
+}
+
+.ap-cta-btn {
+  background-color: #F9C62C;
+  color: #102030;
+  border: 2px solid #F9C62C;
+  padding: 12px 28px;
+  font-family: 'Sahitya', serif;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 7px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.ap-cta-btn:hover {
+  background-color: transparent;
+  color: #F9C62C;
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 900px) {
+  .ap-mv-grid { grid-template-columns: 1fr; }
+  .ap-team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .ap-who-inner { flex-direction: column; }
+  .ap-who-img img { height: 280px; }
+  .ap-center-heading { font-size: 26px; }
+  .ap-team-grid { grid-template-columns: repeat(2, 1fr); }
+  .ap-team-card { min-width: 120px; }
+  .ap-cta-inner { flex-direction: column; align-items: flex-start; }
+  .ap-cta-btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .ap-team-grid { grid-template-columns: repeat(2, 1fr); }
+  .ap-team-card { max-width: 100%; }
+  .ap-stats-row { gap: 16px; }
+  .ap-stat-value { font-size: 30px; }
+}
+
+/* ════════════════════════════════
+   INTERACTIVITY & ANIMATIONS
+════════════════════════════════ */
+
+/* Hero glass card fades up on load */
+.ap-fade-up {
+  animation: apFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes apFadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll reveal base state */
+.ap-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+              transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.ap-reveal.ap-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from sides for who-we-are */
+.ap-who-inner .ap-slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s 0.1s cubic-bezier(0.22,1,0.36,1),
+              transform 0.7s 0.1s cubic-bezier(0.22,1,0.36,1);
+}
+.ap-who-inner .ap-slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s 0.2s cubic-bezier(0.22,1,0.36,1),
+              transform 0.7s 0.2s cubic-bezier(0.22,1,0.36,1);
+}
+.ap-who-inner.ap-revealed .ap-slide-left,
+.ap-who-inner.ap-revealed .ap-slide-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Who we are image zoom on hover */
+.ap-who-img img {
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+.ap-who-img:hover img {
+  transform: scale(1.04);
+}
+
+/* Mission & Vision card hover lift + glow */
+.ap-mv-hover {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.ap-mv-hover:hover {
+  transform: translateY(-8px);
+  border-color: rgba(249,198,44,0.45);
+  box-shadow: 0 12px 32px rgba(249,198,44,0.1);
+}
+
+/* Mission icon pulse on hover */
+.ap-mv-hover:hover .ap-mv-icon-wrap {
+  animation: apPulse 0.6s ease;
+}
+@keyframes apPulse {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
+/* Team cards stagger fade-up */
+.ap-team-grid .ap-team-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1),
+              transform 0.55s cubic-bezier(0.22,1,0.36,1);
+}
+.ap-reveal.ap-revealed .ap-team-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Team card overlay slides up on hover */
+.ap-team-overlay {
+  transform: translateY(8px);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  opacity: 0.85;
+}
+.ap-team-card:hover .ap-team-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Stats count-up pulse */
+.ap-stat-value {
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+.ap-stat:hover .ap-stat-value {
+  color: #fff;
+  text-shadow: 0 0 20px rgba(249,198,44,0.6);
+}
+.ap-stat:hover .ap-stat-icon {
+  animation: apBounce 0.5s ease;
+}
+@keyframes apBounce {
+  0%,100% { transform: translateY(0); }
+  40%     { transform: translateY(-8px); }
+}
+
+/* Partner tiles hover lift */
+.ap-partner-tile {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ap-partner-tile:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 10px 24px rgba(249,198,44,0.25);
+}
+
+/* CTA button pulse on hover */
+.ap-cta-btn {
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+.ap-cta-btn:hover {
+  box-shadow: 0 0 20px rgba(249,198,44,0.4);
+  transform: translateY(-2px);
+}
+
+/* Outline button arrow nudge */
+.ap-outline-btn {
+  position: relative;
+  overflow: hidden;
+}
+.ap-outline-btn::after {
+  content: ' →';
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+}
+.ap-outline-btn:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ════════════════════════════════
+   HERO INTERACTIVITY
+════════════════════════════════ */
+
+/* Ken Burns — slow zoom on the background image */
+.ap-hero {
+  background-attachment: fixed; /* parallax on desktop */
+  animation: apKenBurns 14s ease-in-out infinite alternate;
+}
+@keyframes apKenBurns {
+  from { background-size: 105%; }
+  to   { background-size: 115%; }
+}
+
+/* Disable fixed attachment on mobile (causes issues) */
+@media (max-width: 768px) {
+  .ap-hero {
+    background-attachment: scroll;
+    animation: apKenBurnsMobile 14s ease-in-out infinite alternate;
+  }
+  @keyframes apKenBurnsMobile {
+    from { background-size: 120%; }
+    to   { background-size: 135%; }
+  }
+}
+
+/* Glass card — subtle float animation */
+.ap-hero-glass {
+  animation: apFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both,
+             apFloat 6s ease-in-out 1s infinite;
+}
+@keyframes apFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Tagline shimmer on the gold text */
+.ap-hero-tagline {
+  background: linear-gradient(90deg, #F4C542 0%, #fff8dc 50%, #F4C542 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: apShimmer 3s linear infinite;
+}
+@keyframes apShimmer {
+  from { background-position: 0% center; }
+  to   { background-position: 200% center; }
+}

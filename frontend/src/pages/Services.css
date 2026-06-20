@@ -1,0 +1,500 @@
+/* ═══════════════════════════════════════
+   SERVICES PAGE
+═══════════════════════════════════════ */
+
+.sp {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.sp-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.sp-section {
+  padding: 72px 0;
+}
+
+/* ── shared ── */
+.sp-eyebrow {
+  display: block;
+  font-family: 'Salsa', cursive;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #F9C62C;
+  margin-bottom: 10px;
+}
+.sp-eyebrow.center { text-align: center; }
+
+.sp-center-heading {
+  font-family: 'Salsa', cursive;
+  font-size: 36px;
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.sp-underline {
+  width: 48px;
+  height: 3px;
+  background: #F9C62C;
+  margin: 0 auto 48px;
+  border-radius: 2px;
+}
+
+/* ════════════════════════════════
+   1. HERO
+════════════════════════════════ */
+.sp-hero {
+  position: relative;
+  min-height: 520px;
+  background-size: cover;
+  background-position: center 30%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(4,12,24,0.92) 0%,
+    rgba(4,12,24,0.75) 40%,
+    rgba(4,12,24,0.30) 70%,
+    rgba(4,12,24,0.10) 100%
+  );
+  z-index: 1;
+}
+
+.sp-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(4,12,24,0.5) 0%, transparent 15%),
+    linear-gradient(to top,    rgba(4,12,24,0.7) 0%, transparent 20%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sp-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  padding: 0 0 0 60px;
+  text-align: left;
+}
+
+.sp-hero-content h1 {
+  font-family: 'Salsa', cursive;
+  font-size: 58px;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 10px 0 20px;
+}
+
+.sp-hero-content h1 span {
+  color: #F9C62C;
+}
+
+.sp-hero-content p {
+  font-family: 'Sahitya', serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.82);
+  margin: 0 0 32px;
+}
+
+.sp-hero-btn {
+  display: inline-block;
+  background: #F9C62C;
+  color: #102030;
+  font-family: 'Sahitya', serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 13px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.sp-hero-btn:hover {
+  background: transparent;
+  color: #F9C62C;
+  border: 2px solid #F9C62C;
+  padding: 11px 26px;
+}
+
+/* ════════════════════════════════
+   2. SERVICE CARDS GRID
+════════════════════════════════ */
+.sp-cards-section {
+  background-color: #0a1622;
+}
+
+.sp-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.sp-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.sp-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(249,198,44,0.4);
+}
+
+.sp-card-img {
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+}
+.sp-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.sp-card:hover .sp-card-img img {
+  transform: scale(1.07);
+}
+
+.sp-card-body {
+  padding: 14px 14px 18px;
+  text-align: left;
+}
+
+.sp-card-icon {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.sp-card-body h3 {
+  font-family: 'Salsa', cursive;
+  font-size: 15px;
+  color: var(--text-color);
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.sp-card-body p {
+  font-family: 'Sahitya', serif;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin: 0;
+}
+
+/* ════════════════════════════════
+   3. SERVICES IN DETAIL
+════════════════════════════════ */
+.sp-detail-section {
+  background-color: var(--bg-color);
+}
+
+.sp-detail-row {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,0.07);
+  min-height: 220px;
+}
+
+.sp-detail-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.sp-detail-img {
+  flex: 0 0 40%;
+  overflow: hidden;
+}
+.sp-detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.sp-detail-row:hover .sp-detail-img img {
+  transform: scale(1.04);
+}
+
+.sp-detail-text {
+  flex: 1;
+  background: #0d1e2e;
+  padding: 32px 36px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sp-detail-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.sp-detail-text h3 {
+  font-family: 'Salsa', cursive;
+  font-size: 22px;
+  color: var(--text-color);
+  margin: 0 0 10px;
+}
+
+.sp-detail-text p {
+  font-family: 'Sahitya', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.80;
+  margin: 0 0 16px;
+}
+
+.sp-detail-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
+.sp-detail-text li {
+  font-family: 'Sahitya', serif;
+  font-size: 14px;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sp-check {
+  color: #F9C62C;
+  font-size: 14px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════
+   4. WHY CHOOSE US + PROCESS
+════════════════════════════════ */
+.sp-bottom-section {
+  background-color: #0a1622;
+}
+
+.sp-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Why card */
+.sp-why-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-why-img {
+  height: 200px;
+  overflow: hidden;
+}
+.sp-why-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.sp-why-text {
+  padding: 24px 28px;
+  text-align: left;
+}
+
+.sp-why-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sp-why-list li {
+  font-family: 'Sahitya', serif;
+  font-size: 15px;
+  opacity: 0.88;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Process card */
+.sp-process-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-align: left;
+}
+
+.sp-process-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.sp-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.sp-process-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(249,198,44,0.12);
+  border: 1px solid rgba(249,198,44,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.sp-process-arrow {
+  display: none;
+}
+
+.sp-process-step h4 {
+  font-family: 'Salsa', cursive;
+  font-size: 16px;
+  color: #F9C62C;
+  margin: 0;
+}
+
+.sp-process-step p {
+  font-family: 'Sahitya', serif;
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin: 0;
+}
+
+/* ════════════════════════════════
+   5. CTA BANNER
+════════════════════════════════ */
+.sp-cta-banner {
+  background: #0d1e2e;
+  border-top: 1px solid rgba(249,198,44,0.15);
+  padding: 28px 0;
+}
+
+.sp-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sp-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.sp-cta-logo-icon {
+  font-size: 36px;
+  width: 56px;
+  height: 56px;
+  background: rgba(249,198,44,0.12);
+  border: 1px solid rgba(249,198,44,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sp-cta-left h3 {
+  font-family: 'Salsa', cursive;
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.sp-cta-left p {
+  font-family: 'Sahitya', serif;
+  font-size: 14px;
+  opacity: 0.65;
+  margin: 0;
+}
+
+.sp-cta-btn {
+  background: #F9C62C;
+  color: #102030;
+  border: 2px solid #F9C62C;
+  padding: 13px 28px;
+  font-family: 'Sahitya', serif;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.sp-cta-btn:hover {
+  background: transparent;
+  color: #F9C62C;
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 1100px) {
+  .sp-cards-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .sp-hero-content { padding: 0 20px; }
+  .sp-hero-content h1 { font-size: 38px; }
+  .sp-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .sp-detail-row,
+  .sp-detail-row.reverse { flex-direction: column; }
+  .sp-detail-img { height: 220px; flex: none; }
+  .sp-bottom-grid { grid-template-columns: 1fr; }
+  .sp-cta-inner { flex-direction: column; align-items: flex-start; }
+  .sp-cta-btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .sp-cards-grid { grid-template-columns: 1fr; }
+  .sp-process-steps { grid-template-columns: 1fr; }
+}
