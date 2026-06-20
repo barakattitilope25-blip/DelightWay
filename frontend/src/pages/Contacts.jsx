@@ -51,14 +51,14 @@ const Contacts = () => {
               <span className="contact-info-icon">📍</span>
               <div>
                 <strong>Address</strong>
-                <p>123 Lightway Avenue, Accra, Ghana</p>
+                <p>Olabode Ayoola street, Mowe, Ogun State</p>
               </div>
             </div>
             <div className="contact-info-item">
               <span className="contact-info-icon">📞</span>
               <div>
                 <strong>Phone</strong>
-                <p>+233 20 000 0000</p>
+                <p>+234 812 742 1866</p>
               </div>
             </div>
             <div className="contact-info-item">
